@@ -14,7 +14,7 @@ mongoose.connect(process.env.MONGO_URI)
   .catch(err => console.error("❌ MongoDB connection error:", err));
 
 // Register routes
-app.use("/api/users", require("./routes/userRoutes"));
+app.use("/api/users", require("./routes/UserRoutes"));
 app.use("/api/requests", require("./routes/requestRoutes"));
 app.use("/api/responses", require("./routes/responseRoutes"));
 
