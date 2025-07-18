@@ -15,7 +15,7 @@ function AdminDashboard() {
 
   const fetchRequests = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/requests');
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/requests`);
       setRequests(res.data);
     } catch (err) {
       console.error(err);
@@ -24,7 +24,7 @@ function AdminDashboard() {
 
   const updateStatus = async (id, newStatus) => {
     try {
-      await axios.put(`http://localhost:5000/api/requests/${id}/status`, { status: newStatus });
+      await axios.put(`${process.env.REACT_APP_API_URL}/api/requests/${id}/status`, { status: newStatus });
       fetchRequests();
       alert('Status updated successfully!');
     } catch (err) {
@@ -44,7 +44,7 @@ function AdminDashboard() {
         return;
       }
 
-      await axios.post('http://localhost:5000/api/responses', {
+     await axios.post(`${process.env.REACT_APP_API_URL}/api/responses`, {
         requestId,
         responderId: userId,
         message: responseMessages[requestId]

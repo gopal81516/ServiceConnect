@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+const API_URL = process.env.REACT_APP_API_URL;
 const UserRegister = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -17,7 +17,7 @@ const UserRegister = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:5000/api/users', {
+      const response = await fetch(`${API_URL}/api/users`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)

@@ -9,7 +9,7 @@ const UserDashboard = ({ userId }) => {
   useEffect(() => {
     const fetchUserRequests = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/requests/user/${userId}`);
+       const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/requests/user/${userId}`);
         setRequests(res.data);
       } catch (err) {
         console.error(err);
@@ -21,7 +21,7 @@ const UserDashboard = ({ userId }) => {
 
   const fetchResponses = async (requestId) => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/responses/${requestId}`);
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/responses/${requestId}`);
       setResponses((prev) => ({ ...prev, [requestId]: res.data.data }));
       setSelectedRequestId(requestId);
     } catch (err) {

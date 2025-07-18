@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const UserLogin = (props) => {  
+const API_URL = process.env.REACT_APP_API_URL;
+
+const UserLogin = (props) => {
   const [formData, setFormData] = useState({ email: '' });
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
@@ -14,7 +16,7 @@ const UserLogin = (props) => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:5000/api/users/login', {
+      const response = await fetch(`${API_URL}/api/users/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
