@@ -1,70 +1,105 @@
-# Getting Started with Create React App
+# 🚀 ServiceConnect
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![React](https://img.shields.io/badge/Frontend-React-blue.svg)
+![Express](https://img.shields.io/badge/Backend-Express.js-green.svg)
+![MongoDB](https://img.shields.io/badge/Database-MongoDB-brightgreen.svg)
+![TailwindCSS](https://img.shields.io/badge/Styling-TailwindCSS-blueviolet)
+![Status](https://img.shields.io/badge/Status-Live-success)
 
-## Available Scripts
+> A full-stack service request platform for requesters, responders, and admins. Built using MERN stack with role-based access and deployment-ready architecture.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🌐 Live Demo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+🔗 [https://service-connect-5lo2.vercel.app](https://service-connect-5lo2.vercel.app)  
+🔗 Backend: [https://serviceconnect-pyc7.onrender.com](https://serviceconnect-pyc7.onrender.com)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 📂 Folder Structure
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ServiceConnect/
+│
+├── backend/
+│ └── serviceconnect-backend/
+│ ├── models/
+│ ├── routes/
+│ ├── server.js
+│ └── .env
+│
+└── frontend/
+└── myapp/
+├── public/
+└── src/
+├── components/pages/
+│ ├── AdminDashboard.js
+│ ├── AdminLogin.jsx
+│ ├── UserDashboard.js
+│ ├── UserLogin.js
+│ ├── UserRegister.js
+│ └── Navbar.js
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🔧 Setup Instructions
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### ⚙️ Backend
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+cd backend/serviceconnect-backend
+npm install
+# Create a .env file with your MongoDB URI:
+# MONGODB_URI=your_mongo_connection
+node server.js
+🎨 Frontend
 
-### `npm run eject`
+cd frontend/myapp
+npm install
+npm start
+✅ Features
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    ✍️ User Registration with roles (Requester, Responder, Admin)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    🔐 User Login and role-based redirection
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    🧑‍💼 User Dashboard — View own requests and responses
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    🛠 Admin Dashboard — Manage all requests, update status, respond
 
-## Learn More
+    📊 Role Handling with localStorage
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    🌐 Responsive UI with Tailwind CSS
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    🚀 Deployed to Render (backend) & Vercel (frontend)
 
-### Code Splitting
+    🔄 Environment switching using .env.development and .env.production
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+🧪 Testing Checklist
+Functionality	Tested
+Register as each role	✅
+Login and redirect	✅
+Create service requests	✅
+Admin updates status	✅
+Responder submits responses	✅
+View responses from user dashboard	✅
 
-### Analyzing the Bundle Size
+📚 Learning Goals & Roadmap
+🔧 Feature	📘 You Should Learn
+JWT Authentication	Token-based auth, securing APIs
+Role-Based Protected Routes	Using JWT in frontend routes
+Responder Dashboard	Filtering user type in backend/frontend
+Email Notifications	Nodemailer or similar
+File Upload	Multer, Cloudinary
+Pagination & Search	Query optimization and UI integration
+🛠 Deployment Tools
+Layer	Platform
+Frontend	Vercel
+Backend	Render
+Database	MongoDB Atlas
+🙌 Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Made with ❤️ by @gopal81516
+📜 License
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is open-source and available under the MIT License
